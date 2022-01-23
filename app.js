@@ -1,6 +1,7 @@
 const express = require("express");
 
 const feedRoutes = require("./routes/feed");
+const httpRoutes = require("./routes/http");
 
 const app = express();
 
@@ -19,11 +20,13 @@ app.use((req, res, next) => {
 //routes
 
 app.use("/feed", feedRoutes);
+app.use("/http", httpRoutes);
 
 app.use((req, res) => {
   res.status(404).json({
     exception: "no route found",
+    url: req.url,
   });
 });
 
-app.listen(8080);
+app.listen(3010);

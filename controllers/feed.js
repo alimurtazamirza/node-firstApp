@@ -1,4 +1,4 @@
-const Feed = require("../models/feed");
+// const Feed = require("../models/feed");
 
 // fetch
 const getPosts = async (req, res, next) => {

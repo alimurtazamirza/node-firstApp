@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
+  console.log("request landded");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -19,7 +20,7 @@ app.use((req, res, next) => {
 
 //routes
 
-app.use("/feed", feedRoutes);
+// app.use("/feed", feedRoutes);
 app.use("/http", httpRoutes);
 
 app.use((req, res) => {

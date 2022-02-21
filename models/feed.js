@@ -5,6 +5,12 @@ const sequelize = require("../util/database");
 const Feed = sequelize.define(
   "feed",
   {
+    _id: {
+      type: Sequelize.INTEGER,
+      field: "id",
+      primaryKey: true,
+      autoIncrement: true,
+    },
     title: Sequelize.STRING,
     content: Sequelize.TEXT,
     imageUrl: Sequelize.STRING,
